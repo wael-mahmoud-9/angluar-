@@ -1,4 +1,4 @@
 ---
 #buildproject
-  -name: buildapp
-   shell: ng build --prod
+  - name: build app
+    shell: ng build --configuration production
