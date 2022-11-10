@@ -23,7 +23,7 @@ pipeline
     stage ('docker'){
       steps{
         script{
-        sh "ansible-playbook ansible/docker.yml  -i ansible/inventory/host.yml -e 'ansible_become_password=ansible'"
+        sh "ansible-playbook Ansible/docker.yml  -i /Ansible/inventory/host.yml -e 'ansible_become_password=ansible'"
         }
       }
     }
