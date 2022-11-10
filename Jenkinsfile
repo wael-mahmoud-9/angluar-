@@ -20,10 +20,18 @@ pipeline
         }
       }
     }
-    stage ('docker'){
+    stage ('Docker'){
       steps{
         script{
         sh "ansible-playbook Ansible/docker.yml  -i /Ansible/inventory/host.yml -e 'ansible_become_password=ansible'"
+        }
+      }
+    }
+    stage ('DockerHub'){
+      steps{
+        script{
+        sh "ansible-playbook ansible/docker-registry.yml  -i ansible/inventory/host.yml -e 'ansible_become_password=ansible'"
+
         }
       }
     }
